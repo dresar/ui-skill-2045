@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="id" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyber Neon — preview</title>
+<style>
+  :root { --bg:#eef9ff;--surface:#ffffff;--alt:#e0f4ff;--text:#071018;--muted:#3c5566;--accent:#006c7a;--accent-text:#ffffff;--border:#b8dce6;--border-strong:#78939c;--focus:#005a66;--raised:none;--pressed:none;--radius:8px;--border-width:1px;--font-display:'Segoe UI', system-ui, sans-serif;--font-body:system-ui, -apple-system, 'Segoe UI', sans-serif; }
+  :root[data-mode="dark"] { --bg:#06070f;--surface:#0c0f1c;--alt:#111628;--text:#e9f2ff;--muted:#9fb0cc;--accent:#00e5ff;--accent-text:#001014;--border:#1d2740;--border-strong:#566075;--focus:#7af2ff;--raised:none;--pressed:none;--radius:8px;--border-width:1px;--font-display:'Segoe UI', system-ui, sans-serif;--font-body:system-ui, -apple-system, 'Segoe UI', sans-serif; }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+  .wrap { width: min(100% - 32px, 1120px); margin: 0 auto; padding: 28px 0 64px; }
+  .topbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 36px; }
+  .brand { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; }
+  .nav { display: flex; gap: 16px; flex-wrap: wrap; font-size: 14px; }
+  .nav a { color: var(--muted); text-decoration: none; }
+  .nav a:hover, .nav a:focus-visible { color: var(--accent); }
+  .hero { display: grid; gap: 24px; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); align-items: start; margin-bottom: 40px; }
+  h1 { font-family: var(--font-display); font-size: clamp(30px, 5vw, 52px); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 14px; }
+  .lead { color: var(--muted); max-width: 58ch; margin: 0 0 22px; }
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  button, .button {
+    font: inherit; font-weight: 600; border: var(--border-width) solid var(--border);
+    background: var(--surface); color: var(--text); border-radius: var(--radius);
+    padding: 11px 18px; min-height: 44px; cursor: pointer;
+    box-shadow: var(--raised); transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  }
+  button.primary { background: var(--accent); color: var(--accent-text); border-color: transparent; }
+  button:active { box-shadow: var(--pressed); transform: translateY(1px); }
+  button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .panel { background: var(--surface); border: var(--border-width) solid var(--border); border-radius: var(--radius); padding: 22px; box-shadow: var(--raised); }
+  .panel h2 { margin: 0 0 4px; font-family: var(--font-display); font-size: 18px; }
+  .panel p { margin: 0; color: var(--muted); font-size: 14px; }
+  .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  h2.section { font-family: var(--font-display); font-size: 22px; margin: 40px 0 14px; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
+  .swatch { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+  .swatch .chip { height: 54px; }
+  .swatch .meta { padding: 8px 10px; font-size: 11px; color: var(--muted); display: flex; justify-content: space-between; gap: 6px; }
+  code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 12px; }
+  label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  input { width: 100%; min-height: 44px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface); color: var(--text); padding: 10px 12px; font: inherit; }
+  .alert { border-left: 4px solid var(--accent); background: var(--alt); padding: 12px 14px; border-radius: var(--radius-sm); font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; }
+  .audit { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .audit li { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 8px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+  .audit em { font-style: normal; font-weight: 700; }
+  .ok { color: var(--accent); }
+  .bad { color: #b00020; }
+  .toggle { font-size: 13px; padding: 8px 12px; min-height: 40px; }
+  .note { color: var(--muted); font-size: 12px; margin-top: 24px; }
+  @media (max-width: 720px) { .hero { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { * { transition-duration: 0.01ms !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <div class="brand">Cyber Neon</div>
+    <nav class="nav" aria-label="Preview navigation">
+      <a href="#palette">Palet</a>
+      <a href="#components">Komponen</a>
+      <a href="#contrast">Kontras</a>
+    </nav>
+    <button class="toggle" type="button" id="theme-toggle" aria-pressed="false">Dark mode</button>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Permukaan malam, satu aksen listrik, data presisi.</h1>
+      <p class="lead">Neon adalah sumber cahaya, jadi harus langka. Satu aksen listrik di atas latar gelap terdesaturasi; glow hanya pada objek yang memancarkan. Data dan tipe tetap tajam. Saat semuanya menyala, tidak ada yang menyala.</p>
+      <div class="actions">
+        <button class="primary" type="button">Aksi utama</button>
+        <button type="button">Aksi sekunder</button>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Cyber Neon</h2>
+      <p>Gaming, dev tools, musik, dan produk malam</p>
+      <p style="margin-top:10px">Radius 8px · border 1px</p>
+    </div>
+  </section>
+
+  <h2 class="section" id="palette">Palet</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#eef9ff"></div><div class="meta"><span>bg</span><code>#eef9ff</code></div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="meta"><span>surface</span><code>#ffffff</code></div></div>
+    <div class="swatch"><div class="chip" style="background:#e0f4ff"></div><div class="meta"><span>surfaceAlt</span><code>#e0f4ff</code></div></div>
+    <div class="swatch"><div class="chip" style="background:#071018"></div><div class="meta"><span>text</span><code>#071018</code></div></div>
+    <div class="swatch"><div class="chip" style="background:#3c5566"></div><div class="meta"><span>muted</span><code>#3c5566</code></div></div>
+    <div class="swatch"><div class="chip" style="background:#006c7a"></div><div class="meta"><span>accent</span><code>#006c7a</code></div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="meta"><span>accentText</span><code>#ffffff</code></div></div>
+    <div class="swatch"><div class="chip" style="background:#b8dce6"></div><div class="meta"><span>border</span><code>#b8dce6</code></div></div>
+    <div class="swatch"><div class="chip" style="background:#005a66"></div><div class="meta"><span>focus</span><code>#005a66</code></div></div>
+    <div class="swatch"><div class="chip" style="background:#c4e2ea"></div><div class="meta"><span>shadowDark</span><code>#c4e2ea</code></div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="meta"><span>shadowLight</span><code>#ffffff</code></div></div>
+  </div>
+
+  <h2 class="section" id="components">Komponen</h2>
+  <div class="grid">
+    <section class="panel">
+      <h2>Form</h2>
+      <p style="margin-bottom:12px">Label selalu terlihat.</p>
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="nama@contoh.id" autocomplete="email">
+      <div class="alert" style="margin-top:12px">Email belum terdaftar. Periksa ejaan atau daftar.</div>
+    </section>
+    <section class="panel">
+      <h2>Card</h2>
+      <p>Permukaan memakai satu mekanisme kedalaman: Glow hanya pada aksen. Permukaan memakai langkah tone dan border 1px.</p>
+      <div style="margin-top:14px"><button type="button">Lihat detail</button></div>
+    </section>
+    <section class="panel">
+      <h2>Tabel</h2>
+      <table>
+        <thead><tr><th>Status</th><th>Nilai</th></tr></thead>
+        <tbody>
+          <tr><td>Aktif</td><td>128</td></tr>
+          <tr><td>Tertunda</td><td>12</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <h2 class="section" id="contrast">Kontras (light mode)</h2>
+  <ul class="audit"><li><span>Body text on ground</span><strong>17.9:1</strong> <em class="ok">AA</em></li><li><span>Muted text on ground</span><strong>7.32:1</strong> <em class="ok">AA</em></li><li><span>Body text on surface</span><strong>19.15:1</strong> <em class="ok">AA</em></li><li><span>Muted text on surface</span><strong>7.83:1</strong> <em class="ok">AA</em></li><li><span>Action label on action</span><strong>6.13:1</strong> <em class="ok">AA</em></li><li><span>Action on ground</span><strong>5.73:1</strong> <em class="ok">AA</em></li><li><span>Focus ring on ground</span><strong>7.4:1</strong> <em class="ok">AA</em></li><li><span>Control border on ground</span><strong>3.04:1</strong> <em class="ok">AA</em></li></ul>
+
+  <p class="note">Preview mandiri tanpa dependensi eksternal. Token dihasilkan dari data/themes.mjs.
+  Dokumen lengkap: docs/themes/cyber-neon.md. Bukan nasihat hukum.</p>
+</div>
+<script>
+  const button = document.getElementById("theme-toggle");
+  const root = document.documentElement;
+  button.addEventListener("click", () => {
+    const dark = root.dataset.mode !== "dark";
+    root.dataset.mode = dark ? "dark" : "light";
+    button.setAttribute("aria-pressed", String(dark));
+    button.textContent = dark ? "Light mode" : "Dark mode";
+  });
+</script>
+</body>
+</html>

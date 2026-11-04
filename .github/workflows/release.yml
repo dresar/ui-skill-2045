@@ -1,0 +1,46 @@
+name: Release skill ZIPs
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build ZIPs and release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Regenerate and validate
+        run: |
+          npm run build:skills
+          npm run validate
+
+      - name: Create ZIPs
+        run: |
+          mkdir -p dist
+          for dir in skills/*/; do
+            name="$(basename "$dir")"
+            (cd skills && zip -qr "../dist/ui-skill-2045-${name}.zip" "$name")
+          done
+          (cd skills && zip -qr ../dist/ui-skill-2045-all.zip .)
+          ls -lh dist
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" dist/*.zip \
+            --title "ui-skill-2045 ${GITHUB_REF_NAME}" \
+            --generate-notes

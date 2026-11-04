@@ -1,0 +1,32 @@
+{
+  "name": "ui-skill-2045",
+  "version": "1.0.0",
+  "description": "Install ui-skill-2045 Agent Skills into Claude, Cursor, Codex, Copilot, Gemini, Windsurf, and Antigravity projects.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "ui-skill-2045": "bin/ui-skill-2045.js"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "skills",
+    "README.md"
+  ],
+  "scripts": {
+    "prepack": "node scripts/copy-skills.mjs",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "keywords": [
+    "agent-skills",
+    "ui",
+    "ux",
+    "design-system",
+    "accessibility",
+    "nextjs",
+    "tailwind"
+  ]
+}

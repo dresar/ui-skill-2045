@@ -1,0 +1,26 @@
+{
+  "name": "ui-skill-2045",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Curated, rewritten Agent Skills for accessible, intentional frontend and UI work. Bilingual ID/EN.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "registry": "node scripts/build-registry.mjs",
+    "build:themes": "node scripts/build-theme-docs.mjs",
+    "build:previews": "node scripts/build-previews.mjs",
+    "build:licenses": "node scripts/build-licenses.mjs",
+    "build:evals": "node scripts/build-evals.mjs",
+    "build:skills": "npm run build:themes && npm run build:previews && npm run build:licenses && npm run build:evals && npm run registry",
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test packages/cli/test/*.test.js",
+    "test:cli": "node --test packages/cli/test/*.test.js",
+    "build:site": "npm --prefix site run build",
+    "preview:site": "node scripts/serve-export.mjs",
+    "build": "npm run build:skills && npm run validate && npm run build:site",
+    "dev": "npm --prefix site run dev"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}

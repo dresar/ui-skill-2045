@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate, test, build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Regenerate skills, themes, previews, licenses, evals, registry
+        run: npm run build:skills
+
+      - name: Validate repository contracts
+        run: npm run validate
+
+      - name: Run CLI tests
+        run: npm test
+
+      - name: Install site dependencies
+        working-directory: site
+        run: npm ci
+
+      - name: Build static site
+        working-directory: site
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_ORIGIN: https://${{ github.repository_owner }}.github.io
+
+      - name: Fail if generated files are stale
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Generated files are out of date. Run npm run build:skills and commit the result."
+            git status --porcelain
+            exit 1
+          fi
