@@ -53,7 +53,7 @@ export function ThemeDetail({ theme, audit }: { theme: Theme; audit: AuditRow[] 
       </nav>
 
       <header className="detail-head">
-        <div>
+        <div className="detail-copy">
           <span className="eyebrow">
             {theme.primary ? `${t("themes.primary")} · ` : ""}
             {theme.radius.md} · {theme.borderWidth}

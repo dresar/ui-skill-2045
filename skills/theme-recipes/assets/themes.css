@@ -4,44 +4,44 @@
 /* Soft Blue Neumorphism */
 :root[data-theme="soft-blue-neumorphism"] {
   color-scheme: light;
-  --color-bg: #e6edf7;
-  --color-surface: #e6edf7;
-  --color-surface-alt: #eef3fb;
-  --color-text: #1b2740;
-  --color-text-muted: #44546f;
-  --color-border: #c8d6e8;
-  --color-border-strong: #7c899e;
-  --color-action: #2f5fe0;
+  --color-bg: #edf1fc;
+  --color-surface: #f4f6ff;
+  --color-surface-alt: #e8eeff;
+  --color-text: #1b2943;
+  --color-text-muted: #5f6c85;
+  --color-border: #dce4f3;
+  --color-border-strong: #7f8a9f;
+  --color-action: #315be8;
   --color-action-text: #ffffff;
-  --color-focus: #1f4fd8;
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
-  --border-width: 0px;
-  --shadow-raised: 8px 8px 18px #b9c8dd, -8px -8px 18px #ffffff;
-  --shadow-pressed: inset 5px 5px 10px #b9c8dd, inset -5px -5px 10px #ffffff;
+  --color-focus: #315be8;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 30px;
+  --border-width: 1px;
+  --shadow-raised: 16px 16px 38px #c2cce1, -13px -13px 34px #ffffff;
+  --shadow-pressed: inset 3px 3px 7px #c2cce1, inset -3px -3px 7px #ffffff;
   --font-display: ui-rounded, 'Segoe UI', system-ui, sans-serif;
   --font-body: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 :root[data-theme="soft-blue-neumorphism"][data-mode="dark"] {
   color-scheme: dark;
-  --color-bg: #0f1726;
-  --color-surface: #131d30;
-  --color-surface-alt: #18243a;
-  --color-text: #e8eefb;
-  --color-text-muted: #a9b8d2;
-  --color-border: #2a3a55;
-  --color-border-strong: #58657d;
-  --color-action: #7ea2ff;
+  --color-bg: #0b1120;
+  --color-surface: #121b30;
+  --color-surface-alt: #17223a;
+  --color-text: #e9eefb;
+  --color-text-muted: #a8b4cb;
+  --color-border: #26314a;
+  --color-border-strong: #596278;
+  --color-action: #6f8cff;
   --color-action-text: #0b1220;
-  --color-focus: #a8c0ff;
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
-  --border-width: 0px;
-  --shadow-raised: 8px 8px 18px #070c15, -8px -8px 18px #1e2c44;
-  --shadow-pressed: inset 5px 5px 10px #070c15, inset -5px -5px 10px #1e2c44;
+  --color-focus: #9db6ff;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 30px;
+  --border-width: 1px;
+  --shadow-raised: 16px 16px 38px #05080f, -13px -13px 34px #1b2740;
+  --shadow-pressed: inset 3px 3px 7px #05080f, inset -3px -3px 7px #1b2740;
   --font-display: ui-rounded, 'Segoe UI', system-ui, sans-serif;
   --font-body: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 }

@@ -1,46 +1,57 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
-  <title id="title">ui-skill-2045</title>
+  <title id="title">ui-skill.2045</title>
   <desc id="desc">Agent Skills for accessible, intentional frontend and UI work.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#e9f0fa"/>
-      <stop offset="1" stop-color="#dbe6f5"/>
+    <linearGradient id="page" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9efff"/>
+      <stop offset="1" stop-color="#e7edfc"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4166e8"/>
+      <stop offset="0.58" stop-color="#315be8"/>
+      <stop offset="1" stop-color="#2448cb"/>
     </linearGradient>
     <filter id="raise" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="10" dy="10" stdDeviation="12" flood-color="#b9c8dd"/>
-      <feDropShadow dx="-10" dy="-10" stdDeviation="12" flood-color="#ffffff"/>
+      <feDropShadow dx="14" dy="14" stdDeviation="14" flood-color="#bec9e1" flood-opacity="0.55"/>
+      <feDropShadow dx="-12" dy="-12" stdDeviation="14" flood-color="#ffffff" flood-opacity="0.95"/>
     </filter>
     <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="4" dy="4" stdDeviation="6" flood-color="#b9c8dd"/>
+      <feDropShadow dx="5" dy="5" stdDeviation="7" flood-color="#c2cce1"/>
     </filter>
   </defs>
-  <rect width="1200" height="320" rx="0" fill="url(#bg)"/>
-  <g opacity="0.35" stroke="#c8d6e8" stroke-width="1">
+  <rect width="1200" height="320" fill="url(#page)"/>
+  <circle cx="1120" cy="20" r="220" fill="#ffffff" opacity="0.45"/>
+  <g opacity="0.35" stroke="#c9d7ee" stroke-width="1">
     <path d="M0 80h1200M0 160h1200M0 240h1200"/>
     <path d="M160 0v320M400 0v320M640 0v320M880 0v320M1120 0v320"/>
   </g>
   <g filter="url(#raise)">
-    <rect x="64" y="64" width="1072" height="192" rx="28" fill="#e6edf7"/>
+    <rect x="64" y="58" width="1072" height="204" rx="30" fill="#ffffff" opacity="0.62"/>
+    <rect x="64" y="58" width="1072" height="204" rx="30" fill="none" stroke="#ffffff" stroke-width="1.5"/>
   </g>
-  <g transform="translate(104,104)">
-    <rect width="64" height="64" rx="18" fill="#2f5fe0" filter="url(#soft)"/>
-    <text x="32" y="41" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" fill="#ffffff">45</text>
-  </g>
-  <text x="104" y="222" font-family="Segoe UI, system-ui, sans-serif" font-size="58" font-weight="700" letter-spacing="-2" fill="#1b2740">ui-skill-2045</text>
-  <text x="106" y="252" font-family="Segoe UI, system-ui, sans-serif" font-size="17" fill="#44546f">Agent Skills untuk UI yang aksesibel, disengaja, dan tidak generik.</text>
-  <g transform="translate(760,120)">
-    <g font-family="Segoe UI, system-ui, sans-serif" font-size="13" fill="#1b2740">
-      <rect x="0" y="0" width="150" height="38" rx="12" fill="#eef3fb" filter="url(#soft)"/>
-      <text x="20" y="24">18 skills</text>
-      <rect x="164" y="0" width="118" height="38" rx="12" fill="#eef3fb" filter="url(#soft)"/>
-      <text x="184" y="24">11 themes</text>
-      <rect x="296" y="0" width="98" height="38" rx="12" fill="#eef3fb" filter="url(#soft)"/>
-      <text x="316" y="24">ID / EN</text>
-      <rect x="0" y="54" width="150" height="38" rx="12" fill="#eef3fb" filter="url(#soft)"/>
-      <text x="20" y="78">WCAG AA</text>
-      <rect x="164" y="54" width="118" height="38" rx="12" fill="#eef3fb" filter="url(#soft)"/>
-      <text x="184" y="78">MIT</text>
+  <g transform="translate(104,104)" filter="url(#soft)">
+    <rect width="64" height="64" rx="18" fill="url(#brand)"/>
+    <g fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M32 14 52 24 32 34 12 24l20-10Z"/>
+      <path d="M12 32l20 10 20-10"/>
+      <path d="M12 40l20 10 20-10"/>
     </g>
   </g>
-  <text x="106" y="284" font-family="Segoe UI, system-ui, sans-serif" font-size="11" fill="#44546f">Bukan nasihat hukum · setiap komponen turunan membawa lisensi aslinya</text>
+  <text x="104" y="218" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="58" font-weight="800" letter-spacing="-3" fill="#1b2943">ui-skill<tspan fill="#315be8">.2045</tspan></text>
+  <text x="106" y="252" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="17" fill="#5f6c85">Agent Skills untuk UI yang aksesibel, disengaja, dan tidak generik.</text>
+  <g transform="translate(742,116)">
+    <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="13" fill="#1b2943">
+      <rect x="0" y="0" width="154" height="38" rx="14" fill="#f4f6ff" stroke="#ffffff" filter="url(#soft)"/>
+      <text x="20" y="24">18 skills</text>
+      <rect x="168" y="0" width="120" height="38" rx="14" fill="#f4f6ff" stroke="#ffffff" filter="url(#soft)"/>
+      <text x="188" y="24">11 themes</text>
+      <rect x="302" y="0" width="102" height="38" rx="14" fill="#e8eeff" stroke="#ffffff" filter="url(#soft)"/>
+      <text x="322" y="24" fill="#2448cb">ID / EN</text>
+      <rect x="0" y="54" width="154" height="38" rx="14" fill="#f4f6ff" stroke="#ffffff" filter="url(#soft)"/>
+      <text x="20" y="78">WCAG AA</text>
+      <rect x="168" y="54" width="120" height="38" rx="14" fill="#f4f6ff" stroke="#ffffff" filter="url(#soft)"/>
+      <text x="188" y="78">MIT</text>
+    </g>
+  </g>
+  <text x="106" y="286" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="11" fill="#5f6c85">Bukan nasihat hukum · setiap komponen turunan membawa lisensi aslinya</text>
 </svg>

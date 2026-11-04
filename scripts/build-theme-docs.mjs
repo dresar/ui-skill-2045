@@ -14,6 +14,11 @@ const sitePreviewDir = join(root, "site", "public", "theme-previews");
 function shadowFor(theme, mode, pressed = false) {
   const p = theme[mode];
   const slug = theme.slug;
+  if (slug === "soft-blue-neumorphism") {
+    return pressed
+      ? `inset 3px 3px 7px ${p.shadowDark}, inset -3px -3px 7px ${p.shadowLight}`
+      : `16px 16px 38px ${p.shadowDark}, -13px -13px 34px ${p.shadowLight}`;
+  }
   if (slug.includes("neumorphism")) {
     return pressed
       ? `inset 5px 5px 10px ${p.shadowDark}, inset -5px -5px 10px ${p.shadowLight}`

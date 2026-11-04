@@ -5,8 +5,8 @@ Dihasilkan dari `data/themes.mjs`. Jangan edit manual; ubah data lalu jalankan
 
 | Theme | Mode | Ground | Text | Muted | Accent | Accent text | Border |
 |---|---|---|---|---|---|---|---|
-| Soft Blue Neumorphism | light | `#e6edf7` | `#1b2740` | `#44546f` | `#2f5fe0` | `#ffffff` | `#c8d6e8` |
-| Soft Blue Neumorphism | dark | `#0f1726` | `#e8eefb` | `#a9b8d2` | `#7ea2ff` | `#0b1220` | `#2a3a55` |
+| Soft Blue Neumorphism | light | `#edf1fc` | `#1b2943` | `#5f6c85` | `#315be8` | `#ffffff` | `#dce4f3` |
+| Soft Blue Neumorphism | dark | `#0b1120` | `#e9eefb` | `#a8b4cb` | `#6f8cff` | `#0b1220` | `#26314a` |
 | Glassmorphism | light | `#e8f0fc` | `#14213a` | `#3f5578` | `#2455c3` | `#ffffff` | `#c3d6f0` |
 | Glassmorphism | dark | `#0a1220` | `#eaf1ff` | `#a8b8d4` | `#8fb3ff` | `#081426` | `#26395a` |
 | Aurora Gradient | light | `#eaf6f4` | `#10202b` | `#3e5b63` | `#0f6b5f` | `#ffffff` | `#c2e0da` |
@@ -32,22 +32,22 @@ Dihasilkan dari `data/themes.mjs`. Jangan edit manual; ubah data lalu jalankan
 
 | Theme | Mode | Pair | Ratio | Status |
 |---|---|---|---|---|
-| Soft Blue Neumorphism | light | Body text on ground | 12.63:1 | AA |
-| Soft Blue Neumorphism | light | Muted text on ground | 6.5:1 | AA |
-| Soft Blue Neumorphism | light | Body text on surface | 12.63:1 | AA |
-| Soft Blue Neumorphism | light | Muted text on surface | 6.5:1 | AA |
-| Soft Blue Neumorphism | light | Action label on action | 5.48:1 | AA |
-| Soft Blue Neumorphism | light | Action on ground | 4.65:1 | AA |
-| Soft Blue Neumorphism | light | Focus ring on ground | 5.63:1 | AA |
-| Soft Blue Neumorphism | light | Control border on ground | 3.01:1 | AA |
-| Soft Blue Neumorphism | dark | Body text on ground | 15.42:1 | AA |
-| Soft Blue Neumorphism | dark | Muted text on ground | 8.95:1 | AA |
-| Soft Blue Neumorphism | dark | Body text on surface | 14.49:1 | AA |
-| Soft Blue Neumorphism | dark | Muted text on surface | 8.41:1 | AA |
-| Soft Blue Neumorphism | dark | Action label on action | 7.58:1 | AA |
-| Soft Blue Neumorphism | dark | Action on ground | 7.26:1 | AA |
-| Soft Blue Neumorphism | dark | Focus ring on ground | 9.95:1 | AA |
-| Soft Blue Neumorphism | dark | Control border on ground | 3.05:1 | AA |
+| Soft Blue Neumorphism | light | Body text on ground | 12.87:1 | AA |
+| Soft Blue Neumorphism | light | Muted text on ground | 4.68:1 | AA |
+| Soft Blue Neumorphism | light | Body text on surface | 13.48:1 | AA |
+| Soft Blue Neumorphism | light | Muted text on surface | 4.9:1 | AA |
+| Soft Blue Neumorphism | light | Action label on action | 5.54:1 | AA |
+| Soft Blue Neumorphism | light | Action on ground | 4.9:1 | AA |
+| Soft Blue Neumorphism | light | Focus ring on ground | 4.9:1 | AA |
+| Soft Blue Neumorphism | light | Control border on ground | 3.08:1 | AA |
+| Soft Blue Neumorphism | dark | Body text on ground | 16.22:1 | AA |
+| Soft Blue Neumorphism | dark | Muted text on ground | 9.02:1 | AA |
+| Soft Blue Neumorphism | dark | Body text on surface | 14.76:1 | AA |
+| Soft Blue Neumorphism | dark | Muted text on surface | 8.21:1 | AA |
+| Soft Blue Neumorphism | dark | Action label on action | 6.13:1 | AA |
+| Soft Blue Neumorphism | dark | Action on ground | 6.16:1 | AA |
+| Soft Blue Neumorphism | dark | Focus ring on ground | 9.48:1 | AA |
+| Soft Blue Neumorphism | dark | Control border on ground | 3.09:1 | AA |
 | Glassmorphism | light | Body text on ground | 13.99:1 | AA |
 | Glassmorphism | light | Muted text on ground | 6.58:1 | AA |
 | Glassmorphism | light | Body text on surface | 15.19:1 | AA |
@@ -213,9 +213,9 @@ Dihasilkan dari `data/themes.mjs`. Jangan edit manual; ubah data lalu jalankan
 
 ### Soft Blue Neumorphism
 
-Two opposing shadows: one dark blue, one white. No borders. Pressed state inverts the shadows.
+Translucent light surface + 1px white rim + paired neumorphic shadows. Inset wells for inputs and stats. Pressed state uses the inset pair.
 
-Dua bayangan berlawanan: biru gelap dan putih. Tanpa border. State pressed membalik bayangan.
+Permukaan terang tembus pandang + rim putih 1px + bayangan neumorphism berpasangan. Well inset untuk input dan statistik. State pressed memakai pasangan inset.
 
 ### Glassmorphism
 

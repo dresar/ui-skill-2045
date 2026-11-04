@@ -57,6 +57,17 @@ const dictionary: Record<string, { id: string; en: string }> = {
     id: "Enam skill yang paling sering menyelamatkan halaman dari tampilan generik.",
     en: "Six skills that most often save a page from looking generic.",
   },
+  "home.quickstart": { id: "Mulai cepat", en: "Quick start" },
+  "home.quality": { id: "Kualitas kontras", en: "Contrast quality" },
+  "home.qualityNote": {
+    id: "Semua pasangan teks di 11 tema lolos WCAG AA.",
+    en: "Every text pair across 11 themes passes WCAG AA.",
+  },
+  "home.skillPicks": { id: "Skill pilihan", en: "Selected skills" },
+  "home.skillPicksLead": {
+    id: "Fondasi, komponen, kualitas, dan stack — ditulis sebagai prosedur yang bisa diperiksa.",
+    en: "Foundations, components, quality, and stack — written as procedures you can inspect.",
+  },
   "home.themes": { id: "Tema yang terukur", en: "Themes that are measured" },
   "home.themesLead": {
     id: "Sebelas arah visual, masing-masing dengan token light dan dark serta kontras yang dihitung, bukan dikira-kira.",

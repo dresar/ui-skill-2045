@@ -4,7 +4,9 @@ import "./globals.css";
 import { LanguageProvider } from "@/lib/i18n";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { BottomNav } from "@/components/BottomNav";
 import { BASE_PATH } from "@/lib/site";
+import { getRegistry, getThemes } from "@/lib/data";
 
 const origin = process.env.NEXT_PUBLIC_SITE_ORIGIN ?? "https://dresar.github.io";
 
@@ -66,14 +68,16 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#e6edf7" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f1726" },
+    { media: "(prefers-color-scheme: light)", color: "#edf1fc" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b1120" },
   ],
 };
 
-const themeScript = `(function(){try{var s=localStorage.getItem("ui-skill-mode");var d=s?s==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.dataset.mode=d?"dark":"light";}catch(e){}})();`;
+const themeScript = `(function(){try{var s=localStorage.getItem("ui-skill-mode");var d=s?s==="dark":false;document.documentElement.dataset.mode=d?"dark":"light";}catch(e){}})();`;
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const registry = getRegistry();
+  const themes = getThemes();
   return (
     <html lang="id" suppressHydrationWarning>
       <head>
@@ -84,9 +88,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <a className="skip-link" href="#main">
             Langsung ke konten · Skip to content
           </a>
-          <Header />
+          <Header skillCount={registry.count} themeCount={themes.length} />
           <main id="main">{children}</main>
           <Footer />
+          <BottomNav />
         </LanguageProvider>
       </body>
     </html>

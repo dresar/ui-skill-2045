@@ -33,7 +33,7 @@ export function SkillDetail({
       </nav>
 
       <header className="detail-head">
-        <div>
+        <div className="detail-copy">
           <span className="eyebrow">
             {skill.category} · v{skill.version} · {skill.license}
           </span>
